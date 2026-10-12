@@ -56,7 +56,8 @@
       const tbody = document.querySelector('tbody');
       for (let i=0; i<5; i++) {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>NS-${1050+i}</td><td>Local Partner ${i+1}</td><td>Delivery confirmation</td><td>${i+1} hours</td>`;
+        const hours = 5-i;
+        row.innerHTML = `<td>NS-${1050+i}</td><td>Local Partner ${i+1}</td><td>Delivery confirmation</td><td>${hours} hour${hours === 1 ? '' : 's'}</td>`;
         tbody.append(row);
       }
     }

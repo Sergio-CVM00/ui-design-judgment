@@ -21,7 +21,9 @@ test('capture valid alternatives, responsive states, interaction and seeded geom
   interaction.checks.push({ id: 'queue-open', kind: 'text', selector: '#orders-panel h2', value: 'Review queue opened' });
   const alignment = surface('alignment', 'a');
   alignment.checks.push({ id: 'declared-left-edge', kind: 'aligned', selector: '#revenue', otherSelector: '#show-orders', axis: 'left', tolerance: 1 });
-  const result = await run({ surfaces: [surface('a-desktop', 'a'), surface('b-desktop', 'b'), surface('c-desktop', 'c'), surface('d-desktop', 'd'), surface('b-mobile', 'b', 390), surface('overflow', 'e'), alignment, interaction] }, testInfo);
+  const dense = surface('c-desktop', 'c');
+  dense.checks.push({ id: 'urgency-order', kind: 'text', selector: 'tbody tr:nth-child(4) td:last-child', value: '5 hours' }, { id: 'singular-hour', kind: 'text', selector: 'tbody tr:last-child td:last-child', value: '1 hour' });
+  const result = await run({ surfaces: [surface('a-desktop', 'a'), surface('b-desktop', 'b'), dense, surface('d-desktop', 'd'), surface('b-mobile', 'b', 390), surface('overflow', 'e'), alignment, interaction] }, testInfo);
   expect(result.capture.status, JSON.stringify(result.capture)).toBe('findings');
   for (const id of ['a-desktop', 'b-desktop', 'c-desktop', 'd-desktop', 'b-mobile', 'interaction']) {
     const selected = result.capture.surfaces.find(s => s.id === id);

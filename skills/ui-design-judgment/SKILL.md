@@ -33,18 +33,22 @@ Reuse an existing system first; selecting one tool does not require the other.
 In review mode, reconstruct observable decisions without inventing the author's
 intent. Keep references as supporting examples, not a requirement to copy a look.
 
-Start with the entrypoint of the one source that answers the current design question.
-Read a supporting reference only for a concrete decision or finding; do not preload
-all linked guides, rule catalogs or component implementations. Reuse decisions
-already established by the project. Available guidance:
+Use references to answer a named decision, not as a reading checklist. For long
+files, first list headings with `rg -n '^#{1,3} ' <path>` and read a bounded range
+(`sed -n 'start,endp' <path>` or the reader's offset/limit). Start with the smallest
+complete section; expand if context is missing. Do not read a whole manual merely
+because it is linked. Do not reread unchanged material already in context.
 
-- General product composition and critique: the bundled
-  [UX/UI Design Taste](references/upstream/design-taste/SKILL.md). Follow its
-  relevant supporting references rather than loading them all.
-- New visual identity or an explicitly authorized visual direction:
-  [Anthropic Frontend Design](references/upstream/frontend-design/SKILL.md).
-- Concrete interface conventions and implementation review:
+- Routine product composition: in [UX/UI Design Taste](references/upstream/design-taste/SKILL.md),
+  start with **Visual Hierarchy** and **Spacing Rhythm** when those decisions are
+  unresolved. Consult other sections for a specific concern such as typography,
+  responsive behavior or states. Its broad entrypoint is not required reading.
+- New visual identity, when authorized: [Anthropic Frontend Design](references/upstream/frontend-design/SKILL.md).
+- A concrete implementation concern: search the relevant topic in
   [Vercel Web Interface Guidelines](references/upstream/web-interface-guidelines/command.md).
+
+Do not load multiple sources explaining the same decision unless they conflict or
+leave a real gap. Preserve source attribution and product-specific exceptions.
 
 Resolve conflicts through explicit product requirements, the existing design
 system, applicable accessibility requirements, then contextual guidance. Record
@@ -81,8 +85,9 @@ Report three dimensions independently:
 - Coherence: consistency with product patterns, tokens, components and hierarchy.
 - Taste: contextual judgment about how effectively the composition serves its task.
 
-Use [review-template.md](references/review-template.md) and the optional
-[report schema](references/review.schema.json). A blocker needs a demonstrated
+Use the requested delivery format. Load [review-template.md](references/review-template.md)
+only when a structured critique is needed and no format exists; use the optional
+[report schema](references/review.schema.json) for machine validation. A blocker needs a demonstrated
 impact on an agreed requirement or the primary task. An aesthetic preference alone
 is advisory. Scope approval to inspected evidence; unreviewed taste or missing
 required evidence remains partial. An agent judgment is not proof of user outcomes.

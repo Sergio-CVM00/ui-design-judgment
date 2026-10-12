@@ -34,8 +34,9 @@ Select the two tools independently:
 
 Read components.json, aliases, tokens and installed source components. Use the
 project's runner for the official CLI (`bunx --bun shadcn`, `pnpm dlx shadcn` or
-`npx shadcn`). Inspect `info --json`, `search` and `docs <component>` before adding
-something. Preserve the existing Radix or Base UI composition API and version.
+`npx shadcn`). Use `info --json` for unknown project configuration, `search` when the required
+component is unknown, and `docs <component>` for an unfamiliar composition API.
+These are conditional lookups, not three mandatory discovery steps. Preserve the existing Radix or Base UI composition API and version.
 Verify current commands and docs against the project's installed CLI.
 
 Use semantic tokens and existing variants. Reuse Dialog/Sheet, Field/InputGroup,
@@ -44,12 +45,18 @@ available. Do not rebuild interaction primitives as styled divs.
 
 ### Configure @shadcn/lint when selected
 
-Run the project's lint first. The official
+Run the project's existing lint first, when configured. The official
 [@shadcn/lint](https://github.com/shadcn-ui/lint) can check component restyling,
 raw colors and other declared design-system policies. Follow its
 [SETUP.md](https://github.com/shadcn-ui/lint/blob/main/SETUP.md): register it with
 the existing ESLint/Oxlint setup and preserve current policies. Installing a
 plugin with no enabled rules proves configuration, not enforcement.
+For a new React setup, read the relevant setup section and the selected rule's
+options/contracts. Do not also load the full package README, all framework guides
+or the complete rule catalog. Use heading searches and bounded excerpts; inspect
+exported component props or the contract declaration before reading a whole
+primitive implementation. Expand only when an actual API or styling question
+remains. For existing working setup, go directly to the relevant configuration.
 
 When selecting new rules is authorized, make the policy explicit and scope it:
 component implementations need to style themselves; application consumers should

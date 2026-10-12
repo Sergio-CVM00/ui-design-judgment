@@ -57,4 +57,5 @@ test('a copied standalone skill captures with project-local dependencies', async
   const result = await module.inspect(config, root);
   expect(result.capture.status, JSON.stringify(result.capture)).toBe('captured');
   expect(result.capture.artifacts.some(a => a.kind === 'screenshot')).toBe(true);
+  await expect(module.inspect(config, root)).rejects.toThrow(/EEXIST/);
 });

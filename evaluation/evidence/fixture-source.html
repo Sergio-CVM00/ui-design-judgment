@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Northstar operations - synthetic design calibration</title>
+  <style>
+    :root { --background:#f5f7fa; --surface:#fff; --text:#17263a; --muted:#45566c; --border:#c7d0dc; --accent:#183f6d; --positive:#216044; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--background); color:var(--text); font:16px/1.5 system-ui,sans-serif; }
+    main { max-width:1120px; margin:0 auto; padding:32px 24px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:28px; }
+    h1 { margin:0; font-size:28px; line-height:1.2; } h2 { font-size:20px; margin:0 0 12px; }
+    p { margin:6px 0; } .secondary { color:var(--muted); } .positive { color:var(--positive); }
+    button { font:inherit; border:1px solid var(--accent); border-radius:6px; padding:10px 16px; background:var(--accent); color:white; cursor:pointer; }
+    button:focus-visible { outline:3px solid #bb6b00; outline-offset:3px; }
+    .metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; margin-bottom:24px; }
+    .metric,.panel { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px; min-width:0; }
+    .value { display:block; font-size:32px; font-weight:650; line-height:1.25; margin:6px 0; }
+    .revenue .metrics { grid-template-columns:2fr 1fr 1fr; } .revenue #revenue { grid-column:1/-1; }
+    .revenue #revenue .value { font-size:48px; }
+    .orders #queue { border-left:5px solid var(--accent); } .orders .metrics { margin-top:24px; }
+    table { border-collapse:collapse; width:100%; text-align:left; font-size:15px; font-variant-numeric:tabular-nums; }
+    caption { text-align:left; color:var(--muted); margin-bottom:12px; }
+    th,td { padding:10px 8px; border-bottom:1px solid var(--border); } th { color:var(--muted); }
+    .table-wrap { overflow:auto; } .dense th,.dense td { padding:7px 8px; }
+    .status { color:var(--positive); font-weight:600; }
+    #orders-panel { margin-top:24px; } #overflow { height:40px; width:1800px; background:#c7d0dc; margin-top:24px; }
+    .brand { font-family:Georgia,serif; --accent:#8712b0; --background:#f7e3fb; }
+    .brand .metric { border-radius:28px; border:3px solid #8712b0; }
+    @media(max-width:600px) { main { padding:20px 16px; } .metrics,.revenue .metrics { grid-template-columns:repeat(2,minmax(0,1fr)); } .value { font-size:26px; } .revenue #revenue .value { font-size:40px; } .metric,.panel { padding:16px; } h1 { font-size:25px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><div><h1>Operations overview</h1><p class="secondary">October 2026 - synthetic calibration data</p></div><button id="show-orders" aria-controls="orders-panel" aria-expanded="false">Review orders</button></header>
+    <section class="metrics" aria-label="Business metrics" id="metrics">
+      <article class="metric" id="revenue"><h2>Revenue this month</h2><span class="value">EUR 78,000</span><p class="positive">+12.4% from last month</p></article>
+      <article class="metric"><h2>Orders</h2><span class="value">54</span><p class="secondary">8 need review</p></article>
+      <article class="metric"><h2>Customers</h2><span class="value">1,420</span><p class="secondary">62 added this month</p></article>
+      <article class="metric"><h2>Returns</h2><span class="value">3</span><p class="secondary">Within expected range</p></article>
+    </section>
+    <section class="panel" id="queue"><h2>Orders needing review</h2><div class="table-wrap"><table><caption>Unresolved orders, sorted by urgency</caption><thead><tr><th scope="col">Order</th><th scope="col">Customer</th><th scope="col">Issue</th><th scope="col">Age</th></tr></thead><tbody>
+      <tr><td>NS-1042</td><td>Harbor Tools</td><td>Payment verification</td><td>2 days</td></tr>
+      <tr><td>NS-1045</td><td>West Field Studio</td><td>Address confirmation</td><td>1 day</td></tr>
+      <tr><td>NS-1047</td><td>Atlas Workshop</td><td>Stock allocation</td><td>6 hours</td></tr>
+    </tbody></table></div></section>
+    <section class="panel" id="orders-panel" hidden><h2>Review queue opened</h2><p>8 orders require review. Start with NS-1042, waiting for payment verification.</p></section>
+  </main>
+  <script>
+    const variant = new URLSearchParams(location.search).get('variant') ?? 'a';
+    const classes = { a:'flat', b:'revenue', c:'orders dense', d:'brand', e:'flat' };
+    document.body.className = classes[variant] ?? 'flat';
+    if (variant === 'c') {
+      document.querySelector('#metrics').before(document.querySelector('#queue'));
+      const tbody = document.querySelector('tbody');
+      for (let i=0; i<5; i++) {
+        const row = document.createElement('tr');
+        const hours = 5-i;
+        row.innerHTML = `<td>NS-${1050+i}</td><td>Local Partner ${i+1}</td><td>Delivery confirmation</td><td>${hours} hour${hours === 1 ? '' : 's'}</td>`;
+        tbody.append(row);
+      }
+    }
+    if (variant === 'e') {
+      const box = document.createElement('div'); box.id='overflow'; box.textContent='Seeded horizontal overflow'; document.querySelector('main').append(box);
+    }
+    document.querySelector('#show-orders').addEventListener('click', event => {
+      document.querySelector('#orders-panel').hidden = false;
+      event.currentTarget.setAttribute('aria-expanded','true');
+    });
+  </script>
+</body>
+</html>

@@ -54,7 +54,7 @@ Example review request:
 
 ## Run the optional adapters
 
-Node 22+ and Bun 1.4.1 are used by this repository. Respect the target project's
+Node 22.13+ or 24+ and Bun 1.4.1 are used by this repository. Respect the target project's
 package manager and isolated QA route when using an installed skill.
 
 ```sh
@@ -122,6 +122,8 @@ all clipping/overlap or user-study outcomes.
 beyond geometry. Independent model evaluation remains **pending**; the repository
 does not claim that green tests prove a model has good taste. Compare actual
 evaluator findings with withheld expected findings before making that claim.
+The [rendered self-review](evaluation/self-review-2026-10-12.md) provides six actual
+screenshots and a scoped report that remains partial where evidence is missing.
 
 ## Contribute
 

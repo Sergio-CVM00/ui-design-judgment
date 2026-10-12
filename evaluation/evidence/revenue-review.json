@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "build": "5612dd05f7724c2a7e8a0689a845bbfde761bc12",
+  "mode": "review",
+  "evaluator": "Codex implementation self-review, expected findings visible; not an independent model evaluation",
+  "intent": {
+    "audience": "Finance owner",
+    "task": "Monitor monthly revenue and its change before supporting metrics",
+    "primaryFocus": "Revenue and monthly change",
+    "designSystem": "Synthetic Northstar system: system sans, navy actions, neutral surfaces and 8px card radii",
+    "assumptions": [
+      "The visual priority is appropriate for revenue monitoring; actual user speed has not been measured."
+    ]
+  },
+  "scope": [
+    {
+      "id": "b-desktop",
+      "route": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": "1280x900",
+      "state": "default"
+    },
+    {
+      "id": "b-mobile",
+      "route": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": "390x900",
+      "state": "default"
+    },
+    {
+      "id": "interaction",
+      "route": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": "1280x900",
+      "state": "review queue opened"
+    }
+  ],
+  "coverage": {
+    "inspected": [
+      "b-desktop",
+      "b-mobile",
+      "interaction"
+    ],
+    "missing": []
+  },
+  "evidence": [
+    {
+      "id": "b-desktop:screenshot",
+      "path": "b-desktop.png",
+      "kind": "screenshot",
+      "surface": "b-desktop",
+      "sha256": "8afebd35ebc8d776ac7cd30851d751a370e15311473bdd2882e9e7b548f5a5ef"
+    },
+    {
+      "id": "b-mobile:screenshot",
+      "path": "b-mobile.png",
+      "kind": "screenshot",
+      "surface": "b-mobile",
+      "sha256": "9c53bdef2653727187e4b270d30154933ff1b47081fe0d9eda8059fde77ea45d"
+    },
+    {
+      "id": "interaction:screenshot",
+      "path": "interaction.png",
+      "kind": "screenshot",
+      "surface": "interaction",
+      "sha256": "517dbafc4a2bbf0fde02d49f97ac07940f9a64d92f5021d288477e54199ea79e"
+    },
+    {
+      "id": "checks",
+      "path": "checks.json",
+      "kind": "checks",
+      "sha256": "fc02e01672beba09d906720b4d6ba9b329e03591a63a41b44ddd9743b3135bcc"
+    },
+    {
+      "id": "source",
+      "path": "fixture-source.html",
+      "kind": "source",
+      "sha256": "537e7c05df1a4825ee81fc2c2c7e9014d26d26d2bba40b4b70a06694597970ff"
+    }
+  ],
+  "checks": [
+    {
+      "id": "rendered-checks",
+      "dimension": "correctness",
+      "status": "pass",
+      "required": true,
+      "surfaces": [
+        "b-desktop",
+        "b-mobile",
+        "interaction"
+      ],
+      "evidence": [
+        "checks"
+      ],
+      "reason": "Recorded Playwright assertions, page errors and automated axe scans passed for these captured states."
+    },
+    {
+      "id": "keyboard-focus",
+      "dimension": "correctness",
+      "status": "unavailable",
+      "required": true,
+      "surfaces": [
+        "b-desktop",
+        "b-mobile",
+        "interaction"
+      ],
+      "evidence": [],
+      "reason": "No dedicated keyboard/focus or announcement scenario was executed; capture alone cannot establish this."
+    },
+    {
+      "id": "system-and-render",
+      "dimension": "coherence",
+      "status": "pass",
+      "required": true,
+      "surfaces": [
+        "b-desktop",
+        "b-mobile",
+        "interaction"
+      ],
+      "evidence": [
+        "source",
+        "b-desktop:screenshot",
+        "b-mobile:screenshot",
+        "interaction:screenshot"
+      ],
+      "reason": "Inspected fixture source and rendered screens retain the declared synthetic tokens, typography and component treatments."
+    }
+  ],
+  "assessment": {
+    "correctness": {
+      "status": "unverified",
+      "rationale": "The captured machine checks pass, but required keyboard/focus evidence is unavailable.",
+      "evidence": [
+        "checks"
+      ]
+    },
+    "coherence": {
+      "status": "pass",
+      "rationale": "The three inspected states retain the declared product language.",
+      "evidence": [
+        "source",
+        "b-desktop:screenshot",
+        "b-mobile:screenshot",
+        "interaction:screenshot"
+      ]
+    },
+    "taste": {
+      "status": "acceptable",
+      "rationale": "The large first-row revenue value expresses the financial priority; supporting metrics remain secondary. Mobile and feedback refinements are advisory within this revenue-monitoring brief.",
+      "evidence": [
+        "b-desktop:screenshot",
+        "b-mobile:screenshot",
+        "interaction:screenshot"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "mobile-density",
+      "nature": "judgment",
+      "dimension": "taste",
+      "severity": "advisory",
+      "surface": "b-mobile",
+      "observation": "The last supporting metric leaves a half-empty row, and table cells wrap into multiple lines.",
+      "consequence": "Supporting information may require more scanning; the primary revenue value remains clear.",
+      "recommendation": "Evaluate representative mobile scanning before choosing a compact supporting-metric or table presentation within existing tokens.",
+      "verification": "Inspect the revised mobile state and compare the primary and secondary reading order with representative content.",
+      "evidence": [
+        "b-mobile:screenshot"
+      ]
+    },
+    {
+      "id": "feedback-discovery",
+      "nature": "judgment",
+      "dimension": "taste",
+      "severity": "advisory",
+      "surface": "interaction",
+      "observation": "The opened summary appears near the bottom of the full-page capture.",
+      "consequence": "Users may miss part of the feedback without scrolling; keyboard focus and announcement behavior remain unverified.",
+      "recommendation": "Inspect the initial viewport response and use the product feedback pattern if the state change is hard to discover.",
+      "verification": "Exercise the action at the initial scroll position, including keyboard activation and focus or announcement evidence.",
+      "evidence": [
+        "interaction:screenshot"
+      ]
+    }
+  ],
+  "limits": [
+    "Synthetic fixtures and self-review with known expectations.",
+    "Only the declared screenshots and recorded Chromium checks were inspected.",
+    "No user study, other browser engines, keyboard/focus evidence or general agent taste validation."
+  ]
+}

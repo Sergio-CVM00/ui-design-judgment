@@ -13,3 +13,6 @@ misses, false positives, authority and uncertainty.
 
 Current independent model evaluation: **pending**. Automated tests establish the
 evidence adapter and report safeguards. They do not establish general agent taste.
+
+See the [rendered implementation self-review](self-review-2026-10-12.md) for actual
+committed screenshots, contextual findings and a partial evidence-backed report.

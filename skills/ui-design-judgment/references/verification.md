@@ -21,8 +21,24 @@ latency justifies it; do not replace failures with forced clicks or weaker check
 
 Once repaired, rerun affected coverage and inspect fresh screenshots. Avoid another
 full run after acceptance passes unless a change or unresolved concern warrants it.
-Keep default passing output short and full logs on disk. A green check never
+Keep full logs on disk. For a passing build, lint or typecheck, report exit status
+and a short tail (for example, the last 12 lines); do not reopen the complete log.
+Inspect new warning categories once with bounded searches. On failure, read the
+first actionable error and its surrounding context, expanding only as needed. A green check never
 replaces visual critique, keyboard checks or an honest coverage statement.
+
+## Inspect without duplicate visual reads
+
+Capture every required surface and run functional assertions across the declared
+matrix. For visual review, open the base composition at each required width, then
+the changed or highest-risk states (for example a long-name mobile dialog, empty
+state and alternate chart). Reuse a capture already inspected when its pixels have
+not changed. After a local correction, inspect the affected viewport/region first;
+reopen other captures if the change can affect them. Expand the review whenever a
+layout, interaction or uncertainty warrants it. A contact sheet is only an overview;
+inspect full-resolution text and controls when judging legibility. State exactly
+which captures were visually reviewed and which states were only machine checked.
+Do not reduce required coverage or hide an unreviewed state behind a green test.
 
 ## Capture an explicit scope
 

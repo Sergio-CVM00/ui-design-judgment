@@ -52,6 +52,24 @@ Example review request:
 > task is revenue monitoring. Inspect the declared routes and states, justify
 > findings against that intention and identify missing evidence.
 
+## Optional shadcn/ui + lint workflow
+
+When a project uses or selects shadcn/ui, the skill reuses its components, variants
+and blocks. For compatible Tailwind v4 projects, `@shadcn/lint` can enforce selected
+component and token policies, including in projects without shadcn/ui. Both tools
+are optional; existing design systems remain the starting point.
+
+Follow the portable [selection, setup and verification guide](skills/ui-design-judgment/references/component-reuse.md#optional-shadcnui-and-lint-tools).
+It covers rule selection, consumer contracts, scoped evidence and rendered-review
+limits. Installing this skill does not install either tool in the target app.
+The repository's lint fixture tests one selected rule, not a complete UI policy.
+
+Example request:
+
+> Use ui-design-judgment with our existing shadcn/ui components. Configure
+> @shadcn/lint to protect component styling and semantic tokens, preserve our
+> existing lint setup, and verify the rendered form with realistic error states.
+
 ## Run the optional adapters
 
 Node 22.13+ or 24+ and Bun 1.4.1 are used by this repository. Respect the target project's

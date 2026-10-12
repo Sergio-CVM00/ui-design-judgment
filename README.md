@@ -14,23 +14,6 @@ task before critique, reuses the product's components and design system, inspect
 the rendered result, and separates automated correctness from contextual judgment.
 There is no universal aesthetic score, provider dependency or orchestration service.
 
-## What is reused
-
-| Existing capability | Role here |
-| --- | --- |
-| UX/UI Design Taste | Product hierarchy, composition, density and critique |
-| Anthropic Frontend Design | An authorized, intentional visual direction |
-| Vercel Web Interface Guidelines | Concrete interface conventions |
-| Existing components, shadcn/ui and project tokens | Compose instead of rebuilding primitives |
-| Existing lint and optional @shadcn/lint | Enforce the project's selected design-system policies |
-| Playwright and axe | Exercise declared states, capture pixels/traces and run applicable checks |
-| JSON Schema and Ajv | Verify the scope and consistency of an evidence-backed review |
-
-The three guidance sources are bundled unmodified at pinned revisions, with their
-licenses. Read [source attribution](skills/ui-design-judgment/references/sources.md)
-and [sources.lock.json](sources.lock.json). The contribution is their contextual
-use, component reuse workflow and evidence contract, with small executable adapters.
-
 ## Start here: use it with your agent
 
 You need the portable skill, not a new agent framework. Your agent keeps its model,
@@ -94,6 +77,23 @@ agent and application still use their normal setup. Browser inspection requires 
 working, authorized browser test environment; unavailable checks must be reported.
 Installing this skill does not install shadcn/ui, lint or Playwright in your app.
 The adapters below are optional: reuse your project's existing checks first.
+
+## What is reused
+
+| Existing capability | Role here |
+| --- | --- |
+| UX/UI Design Taste | Product hierarchy, composition, density and critique |
+| Anthropic Frontend Design | An authorized, intentional visual direction |
+| Vercel Web Interface Guidelines | Concrete interface conventions |
+| Existing components, shadcn/ui and project tokens | Compose instead of rebuilding primitives |
+| Existing lint and optional @shadcn/lint | Enforce the project's selected design-system policies |
+| Playwright and axe | Exercise declared states, capture pixels/traces and run applicable checks |
+| JSON Schema and Ajv | Verify the scope and consistency of an evidence-backed review |
+
+The three guidance sources are bundled unmodified at pinned revisions, with their
+licenses. Read [source attribution](skills/ui-design-judgment/references/sources.md)
+and [sources.lock.json](sources.lock.json). The contribution is their contextual
+use, component reuse workflow and evidence contract, with small executable adapters.
 
 ## Optional shadcn/ui + lint workflow
 

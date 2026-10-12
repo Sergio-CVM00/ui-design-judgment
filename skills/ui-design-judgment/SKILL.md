@@ -33,7 +33,10 @@ Reuse an existing system first; selecting one tool does not require the other.
 In review mode, reconstruct observable decisions without inventing the author's
 intent. Keep references as supporting examples, not a requirement to copy a look.
 
-Load only the applicable existing guidance:
+Start with the entrypoint of the one source that answers the current design question.
+Read a supporting reference only for a concrete decision or finding; do not preload
+all linked guides, rule catalogs or component implementations. Reuse decisions
+already established by the project. Available guidance:
 
 - General product composition and critique: the bundled
   [UX/UI Design Taste](references/upstream/design-taste/SKILL.md). Follow its
@@ -56,7 +59,9 @@ Reuse project tests, lint, Storybook and browser tooling. Collect screenshots,
 check results and, where useful, traces. Playwright and axe are evidence tools;
 lint cannot inspect pixels, and screenshots cannot prove every interaction.
 
-Use [verification.md](references/verification.md) for the minimal adapter. Its
+Use [verification.md](references/verification.md) for stable browser verification
+and the optional minimal adapter. Keep routine command output concise, preserve full
+logs as artifacts, and inspect failure details when needed. Its
 screenshots must be visually opened and examined. Do not approve from source code,
 from filenames, from an approved baseline alone, or from a green automated scan.
 Record unavailable checks and missing coverage explicitly. Respect the host's
@@ -83,7 +88,9 @@ is advisory. Scope approval to inspected evidence; unreviewed taste or missing
 required evidence remains partial. An agent judgment is not proof of user outcomes.
 
 In build/refinement mode, fix the consequential findings, observe the changed
-result and verify the affected behavior. Stop when the agreed scope is acceptable;
+result and verify the affected behavior. During diagnosis, rerun the failing case
+first; after the correction, run the applicable coverage and inspect changed renders.
+Reserve time to report evidence and limitations and stop task-owned servers. Stop when the agreed scope is acceptable;
 if a remaining problem requires wider authority or unavailable evidence, report
 it. In review mode, return the critique without changing the interface.
 

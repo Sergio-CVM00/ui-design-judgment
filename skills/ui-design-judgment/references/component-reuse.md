@@ -97,3 +97,9 @@ Reuse complete product patterns to reduce these mistakes, then inspect realistic
 content, responsive widths and relevant interaction states with the existing
 browser tests and [verification workflow](verification.md). Lint results support
 coherence; they do not certify rendered geometry, accessibility or taste.
+
+Reuse working component and lint configuration before consulting setup guides. Read
+only the selected rule or component documentation needed for the current decision.
+Confirm the available package runner before invoking CLI tools; Bun supports `bun x`
+when a separate `bunx` executable is absent. Preserve full installation logs on disk
+and surface their status and actionable errors instead of loading repeated warnings.

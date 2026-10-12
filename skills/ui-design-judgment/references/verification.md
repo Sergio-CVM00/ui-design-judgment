@@ -4,6 +4,26 @@ Prefer the product's existing Playwright suites, Storybook stories, lint,
 accessibility tests and visual comparison setup. Add the smallest missing check.
 The included CLI is optional glue for a project without a durable capture path.
 
+## Stable browser verification
+
+For a new local UI, prefer a completed production build served by the project's
+preview/static server for final checks. Rebuild after source changes. Keep test
+reports, screenshots and traces outside watched source directories. If a dev server
+is necessary, exclude evidence directories from its watcher and wait for updates
+to settle before interacting. Artifact writes must not trigger page reloads.
+
+When a check fails, distinguish a product defect from unstable test infrastructure.
+Inspect the first useful error, trace or navigation event; reproduce one failing
+case at one viewport before rerunning the matrix. Detached elements, unexpected
+navigation and destroyed execution contexts warrant checking reloads and server
+lifecycle before changing the application. Increase a timeout only when observed
+latency justifies it; do not replace failures with forced clicks or weaker checks.
+
+Once repaired, rerun affected coverage and inspect fresh screenshots. Avoid another
+full run after acceptance passes unless a change or unresolved concern warrants it.
+Keep default passing output short and full logs on disk. A green check never
+replaces visual critique, keyboard checks or an honest coverage statement.
+
 ## Capture an explicit scope
 
 Install the runtime dependencies in the environment that owns QA, using that

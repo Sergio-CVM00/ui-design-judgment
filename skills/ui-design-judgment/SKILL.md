@@ -27,6 +27,9 @@ minimalism, whitespace, novelty, animation or a preferred font.
 Connect hierarchy, grouping, rhythm, typography, color and state treatment to the
 task. State the intended reading and action order. Use existing components and
 variants first; follow [component-reuse.md](references/component-reuse.md).
+For compatible projects, shadcn/ui and `@shadcn/lint` are optional tools: follow
+[the selection and policy workflow](references/component-reuse.md#optional-shadcnui-and-lint-tools).
+Reuse an existing system first; selecting one tool does not require the other.
 In review mode, reconstruct observable decisions without inventing the author's
 intent. Keep references as supporting examples, not a requirement to copy a look.
 

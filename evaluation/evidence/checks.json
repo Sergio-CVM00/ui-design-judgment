@@ -1,0 +1,166 @@
+{
+  "build": "5612dd05f7724c2a7e8a0689a845bbfde761bc12",
+  "environment": {
+    "node": "v22.23.3",
+    "platform": "linux",
+    "browser": "chromium",
+    "browserVersion": "156.0.8078.4"
+  },
+  "surfaces": [
+    {
+      "id": "b-desktop",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "default",
+      "actualUrl": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "checks": [
+        {
+          "id": "document-width",
+          "kind": "horizontal-overflow",
+          "status": "pass",
+          "expected": {
+            "id": "document-width",
+            "kind": "horizontal-overflow"
+          },
+          "observed": {
+            "scrollWidth": 1280,
+            "viewportWidth": 1280
+          }
+        },
+        {
+          "id": "heading",
+          "kind": "visible",
+          "status": "pass",
+          "expected": {
+            "id": "heading",
+            "kind": "visible",
+            "selector": "h1"
+          }
+        },
+        {
+          "id": "page-errors",
+          "kind": "page-errors",
+          "status": "pass",
+          "observed": []
+        },
+        {
+          "id": "axe",
+          "kind": "axe",
+          "status": "pass",
+          "observed": []
+        }
+      ],
+      "status": "captured"
+    },
+    {
+      "id": "b-mobile",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "state": "default",
+      "actualUrl": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "checks": [
+        {
+          "id": "document-width",
+          "kind": "horizontal-overflow",
+          "status": "pass",
+          "expected": {
+            "id": "document-width",
+            "kind": "horizontal-overflow"
+          },
+          "observed": {
+            "scrollWidth": 390,
+            "viewportWidth": 390
+          }
+        },
+        {
+          "id": "heading",
+          "kind": "visible",
+          "status": "pass",
+          "expected": {
+            "id": "heading",
+            "kind": "visible",
+            "selector": "h1"
+          }
+        },
+        {
+          "id": "page-errors",
+          "kind": "page-errors",
+          "status": "pass",
+          "observed": []
+        },
+        {
+          "id": "axe",
+          "kind": "axe",
+          "status": "pass",
+          "observed": []
+        }
+      ],
+      "status": "captured"
+    },
+    {
+      "id": "interaction",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "review queue opened",
+      "actualUrl": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "checks": [
+        {
+          "id": "document-width",
+          "kind": "horizontal-overflow",
+          "status": "pass",
+          "expected": {
+            "id": "document-width",
+            "kind": "horizontal-overflow"
+          },
+          "observed": {
+            "scrollWidth": 1280,
+            "viewportWidth": 1280
+          }
+        },
+        {
+          "id": "heading",
+          "kind": "visible",
+          "status": "pass",
+          "expected": {
+            "id": "heading",
+            "kind": "visible",
+            "selector": "h1"
+          }
+        },
+        {
+          "id": "queue-open",
+          "kind": "text",
+          "status": "pass",
+          "expected": {
+            "id": "queue-open",
+            "kind": "text",
+            "selector": "#orders-panel h2",
+            "value": "Review queue opened"
+          }
+        },
+        {
+          "id": "page-errors",
+          "kind": "page-errors",
+          "status": "pass",
+          "observed": []
+        },
+        {
+          "id": "axe",
+          "kind": "axe",
+          "status": "pass",
+          "observed": []
+        }
+      ],
+      "status": "captured"
+    }
+  ]
+}

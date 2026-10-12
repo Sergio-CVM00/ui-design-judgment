@@ -1,0 +1,10 @@
+{
+  "evaluatorAccess": "Do not include this file in the evaluator context.",
+  "expectations": {
+    "revenue-comparison": ["Recognize the equal-weight competition in a and the stronger revenue focus in b; explain the task impact rather than declaring a universally ugly."],
+    "operational-density": ["Preserve the queue-first composition and useful row density; do not recommend oversized metrics or indiscriminate whitespace."],
+    "system-coherence": ["Identify the serif typography, purple accent and large rounded borders as conflicts with the declared system; novelty does not authorize the change."],
+    "same-view-different-intent": ["A revenue-first view fits monitoring better than exception triage; the intention changes the recommendation for the same pixels."],
+    "responsive-and-state": ["Use actual inspected mobile and expanded-state evidence and disclose unobserved keyboard/focus/other states; do not certify the whole app."]
+  }
+}

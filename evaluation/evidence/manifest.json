@@ -1,0 +1,124 @@
+{
+  "sourceRun": "https://github.com/Sergio-CVM00/ui-design-judgment/actions/runs/38247214079",
+  "capturedBuild": "5612dd05f7724c2a7e8a0689a845bbfde761bc12",
+  "sourceHead": "2d1d10b",
+  "environment": {
+    "node": "v22.23.3",
+    "platform": "linux",
+    "browser": "chromium",
+    "browserVersion": "156.0.8078.4"
+  },
+  "scope": [
+    {
+      "id": "a-desktop",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=a",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "default"
+    },
+    {
+      "id": "b-desktop",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "default"
+    },
+    {
+      "id": "c-desktop",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=c",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "default"
+    },
+    {
+      "id": "d-desktop",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=d",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "default"
+    },
+    {
+      "id": "b-mobile",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "state": "default"
+    },
+    {
+      "id": "interaction",
+      "url": "http://127.0.0.1:44261/dashboard.html?variant=b",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "state": "review queue opened"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "a-desktop:screenshot",
+      "path": "a-desktop.png",
+      "kind": "screenshot",
+      "surface": "a-desktop",
+      "sha256": "ddf04f78ee472b079abd3756eb46340f0ae90471c6654b3ac4f5f6335e67347e"
+    },
+    {
+      "id": "b-desktop:screenshot",
+      "path": "b-desktop.png",
+      "kind": "screenshot",
+      "surface": "b-desktop",
+      "sha256": "8afebd35ebc8d776ac7cd30851d751a370e15311473bdd2882e9e7b548f5a5ef"
+    },
+    {
+      "id": "c-desktop:screenshot",
+      "path": "c-desktop.png",
+      "kind": "screenshot",
+      "surface": "c-desktop",
+      "sha256": "eae3f2d8774ba3182f4cca83b6cad908ce599d27a5f61e2c87b9feb0c41ff6d6"
+    },
+    {
+      "id": "d-desktop:screenshot",
+      "path": "d-desktop.png",
+      "kind": "screenshot",
+      "surface": "d-desktop",
+      "sha256": "e48ee3e8e36666dda7eb19866e37358284ad9f2c8098820ff26c652d1d273ca5"
+    },
+    {
+      "id": "b-mobile:screenshot",
+      "path": "b-mobile.png",
+      "kind": "screenshot",
+      "surface": "b-mobile",
+      "sha256": "9c53bdef2653727187e4b270d30154933ff1b47081fe0d9eda8059fde77ea45d"
+    },
+    {
+      "id": "interaction:screenshot",
+      "path": "interaction.png",
+      "kind": "screenshot",
+      "surface": "interaction",
+      "sha256": "517dbafc4a2bbf0fde02d49f97ac07940f9a64d92f5021d288477e54199ea79e"
+    },
+    {
+      "id": "checks",
+      "path": "checks.json",
+      "kind": "checks",
+      "sha256": "fc02e01672beba09d906720b4d6ba9b329e03591a63a41b44ddd9743b3135bcc"
+    },
+    {
+      "id": "source",
+      "path": "fixture-source.html",
+      "kind": "source",
+      "sha256": "537e7c05df1a4825ee81fc2c2c7e9014d26d26d2bba40b4b70a06694597970ff"
+    }
+  ],
+  "reviewType": "Implementation self-review with known expected findings; independent evaluation pending."
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {"id": "revenue-comparison", "evidence": ["a-desktop.png", "b-desktop.png"], "brief": "A finance owner checks monthly revenue and its change first, then supporting business metrics. Compare both views for this task. Identify evidence, user impact and any fitting correction. Keep the existing Northstar visual system."},
+    {"id": "operational-density", "evidence": ["c-desktop.png"], "brief": "An operations analyst resolves exceptions throughout the day. They need to scan unresolved orders in urgency order with enough visible rows and read supporting totals second. Evaluate this composition and preserve choices that serve the task."},
+    {"id": "system-coherence", "evidence": ["a-desktop.png", "d-desktop.png"], "brief": "This existing product uses system sans typography, navy semantic actions, neutral surfaces and 8px card radii. Evaluate the second screen's coherence with the first, without treating novelty as a requirement."},
+    {"id": "same-view-different-intent", "evidence": ["b-desktop.png"], "brief": "Evaluate this screen twice: first for an owner monitoring monthly revenue; then for an operator who must quickly locate and prioritize unresolved orders. Explain whether and why your recommendation changes."},
+    {"id": "responsive-and-state", "evidence": ["b-mobile.png", "interaction.png"], "brief": "Evaluate the mobile composition and the opened review queue. Identify what screenshots establish and what still needs keyboard, interaction or broader state evidence."}
+  ]
+}

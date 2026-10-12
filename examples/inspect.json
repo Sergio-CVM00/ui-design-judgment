@@ -1,0 +1,8 @@
+{
+  "build": "replace-with-your-source-revision",
+  "outputDir": ".evidence/demo",
+  "surfaces": [
+    {"id": "overview-desktop", "url": "http://127.0.0.1:44261/dashboard.html?variant=b", "viewport": {"width": 1280, "height": 900}, "state": "default", "ready": "main", "checks": [{"id": "document-width", "kind": "horizontal-overflow"}, {"id": "primary-action", "kind": "visible", "selector": "#show-orders"}]},
+    {"id": "overview-mobile", "url": "http://127.0.0.1:44261/dashboard.html?variant=b", "viewport": {"width": 390, "height": 844}, "state": "review queue opened", "ready": "main", "steps": [{"action": "click", "selector": "#show-orders"}], "checks": [{"id": "queue-open", "kind": "text", "selector": "#orders-panel h2", "value": "Review queue opened"}, {"id": "document-width", "kind": "horizontal-overflow"}]}
+  ]
+}

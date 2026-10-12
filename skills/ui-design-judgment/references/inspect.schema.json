@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object", "additionalProperties": false,
+  "required": ["build", "outputDir", "surfaces"],
+  "properties": {
+    "build": {"type": "string", "minLength": 1},
+    "outputDir": {"type": "string", "minLength": 1},
+    "axe": {"type": "boolean"},
+    "timeoutMs": {"type": "integer", "minimum": 1, "maximum": 120000},
+    "surfaces": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/surface"}}
+  },
+  "definitions": {
+    "surface": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "url", "viewport", "state", "ready"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-zA-Z0-9_-]+$"},
+        "url": {"type": "string", "pattern": "^https?://"},
+        "state": {"type": "string", "minLength": 1},
+        "ready": {"type": "string", "minLength": 1},
+        "viewport": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}}},
+        "steps": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["action", "selector"], "properties": {"action": {"enum": ["click", "fill", "press"]}, "selector": {"type": "string", "minLength": 1}, "value": {"type": "string"}}, "allOf": [{"if": {"properties": {"action": {"enum": ["fill", "press"]}}}, "then": {"required": ["value"]}}]}},
+        "checks": {"type": "array", "items": {"$ref": "#/definitions/check"}}
+      }
+    },
+    "check": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["visible", "in-viewport", "text", "css", "horizontal-overflow", "aligned"]},
+        "selector": {"type": "string", "minLength": 1}, "otherSelector": {"type": "string", "minLength": 1},
+        "value": {"type": "string"}, "property": {"type": "string", "minLength": 1},
+        "axis": {"enum": ["left", "right", "top", "bottom", "center-x", "center-y"]},
+        "tolerance": {"type": "number", "minimum": 0}
+      },
+      "allOf": [
+        {"if": {"properties": {"kind": {"enum": ["visible", "in-viewport", "text", "css", "aligned"]}}}, "then": {"required": ["selector"]}},
+        {"if": {"properties": {"kind": {"enum": ["text", "css"]}}}, "then": {"required": ["value"]}},
+        {"if": {"properties": {"kind": {"const": "css"}}}, "then": {"required": ["property"]}},
+        {"if": {"properties": {"kind": {"const": "aligned"}}}, "then": {"required": ["otherSelector", "axis", "tolerance"]}}
+      ]
+    }
+  }
+}

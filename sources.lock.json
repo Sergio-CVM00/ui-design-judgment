@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "design-taste",
+      "repo": "arez-xd/ux-ui-design-taste",
+      "revision": "a5c03fb6ac2b6b42f8f183d8514e30e9d032062c",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/SKILL.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/SKILL.md",
+          "sha256": "898887bbcbb8b01fa1e214f979c4566e36ba92aa616b9c20bbdde213303e378d"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/LICENSE",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/LICENSE",
+          "sha256": "5e63cba2bdf6b89cde4a5797886b31bcfcc03835f5a07a38471e6eb500a4399c"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/accessibility-review.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/accessibility-review.md",
+          "sha256": "4c5da64d4cc3a7c0dc95cf29ee1b7c0425d4e98cea20deca6fe9a05a4e32e838"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/component-taste.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/component-taste.md",
+          "sha256": "cd37520731fad8e8a43b944f1fc81076d4f4d286a7650845de5e8c5387c40ee3"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/content-realism.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/content-realism.md",
+          "sha256": "78415b70abecfc4a076cecaa3d4dc9a4a7d479d333b4c91f18e894fbadc29aec"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/frontend-guardrails.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/frontend-guardrails.md",
+          "sha256": "469b334d318c50cca0361545f3806718f72679504dd7f0bb444e20e702aef36e"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/motion-performance.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/motion-performance.md",
+          "sha256": "6e7b5344d02df62bac281f225f651361399fd86d266758362c20eb6990a11569"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/motion-taste.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/motion-taste.md",
+          "sha256": "645ba947525353a330a5f577501452289f84a995ac14bb54ecdb44f0b1c0ff83"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/polish-review.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/polish-review.md",
+          "sha256": "696ad6118650df19f233e3b20320d85f03041c9af2180eb1e07e2f6ee59135c9"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/redesign-audit.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/redesign-audit.md",
+          "sha256": "156dd66a1a8d22248b5a3abf71b1a9b5a4835799a7af1a84f49d2952e693c633"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/shadcn-implementation.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/shadcn-implementation.md",
+          "sha256": "d7afd8101c38082bb1bd93cd1145b826747ab45573107228ca764fff140d0b32"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/design-taste/references/visual-dials.md",
+          "sourceUrl": "https://raw.githubusercontent.com/arez-xd/ux-ui-design-taste/a5c03fb6ac2b6b42f8f183d8514e30e9d032062c/skills/design-taste/references/visual-dials.md",
+          "sha256": "5de15a20b8998e89525fd0fef5e6bb894286a3a9a443e8f6d02573155ceadd70"
+        }
+      ]
+    },
+    {
+      "id": "frontend-design",
+      "repo": "anthropics/skills",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "skills/ui-design-judgment/references/upstream/frontend-design/SKILL.md",
+          "sourceUrl": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md",
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/frontend-design/LICENSE.txt",
+          "sourceUrl": "https://raw.githubusercontent.com/anthropics/skills/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        }
+      ]
+    },
+    {
+      "id": "web-interface-guidelines",
+      "repo": "vercel-labs/web-interface-guidelines",
+      "revision": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "skills/ui-design-judgment/references/upstream/web-interface-guidelines/command.md",
+          "sourceUrl": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/434b7f91364665f2f733b310ec54809bf8f37937/command.md",
+          "sha256": "d246b026f4f29b5823a9cc857f9edf3d2507002e055e32040cadeaf3b38e0234"
+        },
+        {
+          "path": "skills/ui-design-judgment/references/upstream/web-interface-guidelines/LICENSE",
+          "sourceUrl": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/434b7f91364665f2f733b310ec54809bf8f37937/LICENSE",
+          "sha256": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2"
+        }
+      ]
+    }
+  ]
+}

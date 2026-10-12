@@ -1,5 +1,9 @@
 # UI Design Judgment
 
+![An original design workbench illustration: interface sketches, a composed dashboard and a magnifying glass inspecting visual hierarchy.](docs/images/design-judgment.png)
+
+<sub>Original artwork created with OpenAI ImageGen for this project. Conceptual illustration, not a product screenshot.</sub>
+
 Help an agent decide whether an interface serves its users and explain that
 judgment with actual rendered evidence.
 
@@ -9,6 +13,70 @@ The same contract supports building, reviewing and refining UI. It records the
 task before critique, reuses the product's components and design system, inspects
 the rendered result, and separates automated correctness from contextual judgment.
 There is no universal aesthetic score, provider dependency or orchestration service.
+
+## Start here: use it with your agent
+
+You need the portable skill, not a new agent framework. Your agent keeps its model,
+normal tools and project workflow.
+
+### 1. Install or point to the skill
+
+With a compatible skill installer:
+
+```sh
+npx skills add Sergio-CVM00/ui-design-judgment --skill ui-design-judgment
+```
+
+Alternatively, clone this repository and tell your agent to read
+`skills/ui-design-judgment/SKILL.md`, or copy the entire `skills/ui-design-judgment/`
+directory into the skill location supported by your harness. Keep its references
+and scripts together. This path-based approach also works when your harness does
+not provide a skill installer.
+
+### 2. Give it a concrete task
+
+Replace the bracketed details and paste one of these prompts into your agent.
+Use `$ui-design-judgment` where supported; otherwise include the skill's file path.
+
+**Build or improve an interface**
+
+```text
+Read /path/to/ui-design-judgment/skills/ui-design-judgment/SKILL.md.
+Build [screen] for [user]. Their main task is [task].
+Reuse this project's components, tokens and existing design system.
+Implement it, inspect the rendered desktop and mobile states, fix relevant
+problems, and report what passed, failed or was not checked.
+```
+
+**Review without changing code**
+
+```text
+Read /path/to/ui-design-judgment/skills/ui-design-judgment/SKILL.md.
+Review [route or screen] without editing it. The user needs to [task].
+Inspect desktop, mobile and [important states]. Explain each material issue
+with evidence and its effect on that task. Separate measured failures from
+visual judgment, and state what you could not verify.
+```
+
+Want shadcn/ui and lint for a compatible new project? Add:
+
+```text
+Use shadcn/ui components and configure @shadcn/lint for the selected token
+and component policies. Verify that a deliberate violation fails, remove it,
+and check the final rendered result. Preserve existing project configuration.
+```
+
+### 3. Review the evidence
+
+Expect a short explanation of the intended hierarchy, actual screenshots, relevant
+check results and remaining limitations. Lint alone cannot approve the design.
+The agent should read reference sections as needed, not load every bundled guide.
+
+The skill needs no provider API key or background service of its own. Your coding
+agent and application still use their normal setup. Browser inspection requires a
+working, authorized browser test environment; unavailable checks must be reported.
+Installing this skill does not install shadcn/ui, lint or Playwright in your app.
+The adapters below are optional: reuse your project's existing checks first.
 
 ## What is reused
 
@@ -26,31 +94,6 @@ The three guidance sources are bundled unmodified at pinned revisions, with thei
 licenses. Read [source attribution](skills/ui-design-judgment/references/sources.md)
 and [sources.lock.json](sources.lock.json). The contribution is their contextual
 use, component reuse workflow and evidence contract, with small executable adapters.
-
-## Install the portable skill
-
-Use your existing skill installer:
-
-```sh
-npx skills add Sergio-CVM00/ui-design-judgment --skill ui-design-judgment
-```
-
-Or copy `skills/ui-design-judgment/` into the skill directory supported by your
-agent. The directory includes all its guidance, upstream references, schemas and
-scripts. Invoke it with `$ui-design-judgment` or your harness's equivalent.
-No account, provider API key or background service is required.
-
-Example build request:
-
-> Use ui-design-judgment to build this order-resolution view. Prioritize unresolved
-> orders, reuse our current components and tokens, inspect desktop and mobile,
-> and report correctness, coherence and taste with evidence.
-
-Example review request:
-
-> Use ui-design-judgment to review this dashboard without editing it. The primary
-> task is revenue monitoring. Inspect the declared routes and states, justify
-> findings against that intention and identify missing evidence.
 
 ## Optional shadcn/ui + lint workflow
 

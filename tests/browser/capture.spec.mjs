@@ -22,7 +22,7 @@ test('capture valid alternatives, responsive states, interaction and seeded geom
   const alignment = surface('alignment', 'a');
   alignment.checks.push({ id: 'declared-left-edge', kind: 'aligned', selector: '#revenue', otherSelector: '#show-orders', axis: 'left', tolerance: 1 });
   const result = await run({ surfaces: [surface('a-desktop', 'a'), surface('b-desktop', 'b'), surface('c-desktop', 'c'), surface('d-desktop', 'd'), surface('b-mobile', 'b', 390), surface('overflow', 'e'), alignment, interaction] }, testInfo);
-  expect(result.capture.status).toBe('findings');
+  expect(result.capture.status, JSON.stringify(result.capture)).toBe('findings');
   for (const id of ['a-desktop', 'b-desktop', 'c-desktop', 'd-desktop', 'b-mobile', 'interaction']) {
     const selected = result.capture.surfaces.find(s => s.id === id);
     expect(selected.status, JSON.stringify(selected)).toBe('captured');
@@ -37,6 +37,7 @@ test('capture valid alternatives, responsive states, interaction and seeded geom
 test('navigation failure and disabled accessibility remain partial with durable evidence', async ({}, testInfo) => {
   const missing = surface('missing', 'a'); missing.url = 'http://127.0.0.1:44261/not-found';
   const result = await run({ axe: false, surfaces: [surface('without-axe', 'a'), missing] }, testInfo);
+  expect(result.capture.error, JSON.stringify(result.capture)).toBeUndefined();
   expect(result.exitCode).toBe(2);
   expect(result.capture.status).toBe('partial');
   expect(result.capture.surfaces.find(s => s.id === 'missing').error).toContain('HTTP 404');
@@ -52,6 +53,6 @@ test('a copied standalone skill captures with project-local dependencies', async
   const config = path.join(directory, 'config.json');
   await writeFile(config, JSON.stringify({ build: 'portable-skill-fixture', outputDir: 'evidence', surfaces: [surface('portable', 'b')] }));
   const result = await module.inspect(config, root);
-  expect(result.capture.status).toBe('captured');
+  expect(result.capture.status, JSON.stringify(result.capture)).toBe('captured');
   expect(result.capture.artifacts.some(a => a.kind === 'screenshot')).toBe(true);
 });

@@ -35,7 +35,8 @@ export async function inspect(configPath, project = process.cwd()) {
     return result.id;
   }
   try {
-    playwright = await dependency('@playwright/test', project);
+    const loaded = await dependency('@playwright/test', project);
+    playwright = loaded.chromium ? loaded : loaded.default;
     if (config.axe !== false) ({ default: AxeBuilder } = await dependency('@axe-core/playwright', project));
     browser = await playwright.chromium.launch({ headless: true });
     capture.environment.browserVersion = browser.version();
